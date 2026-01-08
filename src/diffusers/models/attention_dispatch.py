@@ -727,7 +727,7 @@ def _native_attention_forward_op(
         dropout_p=dropout_p,
         is_causal=is_causal,
         scale=scale,
-        enable_gqa=enable_gqa,
+        #enable_gqa=enable_gqa,
     )
     out = out.permute(0, 2, 1, 3)
 
@@ -755,7 +755,7 @@ def _native_attention_backward_op(
         dropout_p=ctx.dropout_p,
         is_causal=ctx.is_causal,
         scale=ctx.scale,
-        enable_gqa=ctx.enable_gqa,
+        #enable_gqa=ctx.enable_gqa,
     )
     out = out.permute(0, 2, 1, 3)
 
@@ -1929,7 +1929,7 @@ def _native_attention(
             dropout_p=dropout_p,
             is_causal=is_causal,
             scale=scale,
-            enable_gqa=enable_gqa,
+            #enable_gqa=enable_gqa,
         )
         out = out.permute(0, 2, 1, 3)
     else:
@@ -1980,7 +1980,7 @@ def _native_cudnn_attention(
                 dropout_p=dropout_p,
                 is_causal=is_causal,
                 scale=scale,
-                enable_gqa=enable_gqa,
+                #enable_gqa=enable_gqa,
             )
         out = out.permute(0, 2, 1, 3)
     else:
@@ -2032,7 +2032,7 @@ def _native_efficient_attention(
             dropout_p=dropout_p,
             is_causal=is_causal,
             scale=scale,
-            enable_gqa=enable_gqa,
+            #enable_gqa=enable_gqa,
         )
     out = out.permute(0, 2, 1, 3)
     return out
@@ -2070,7 +2070,7 @@ def _native_flash_attention(
                 dropout_p=dropout_p,
                 is_causal=is_causal,
                 scale=scale,
-                enable_gqa=enable_gqa,
+                #enable_gqa=enable_gqa,
             )
         out = out.permute(0, 2, 1, 3)
     else:
@@ -2122,7 +2122,7 @@ def _native_math_attention(
             dropout_p=dropout_p,
             is_causal=is_causal,
             scale=scale,
-            enable_gqa=enable_gqa,
+            #enable_gqa=enable_gqa,
         )
     out = out.permute(0, 2, 1, 3)
     return out
